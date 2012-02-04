@@ -1,0 +1,44 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset"
+
+@font-face
+    font:
+        family: 'Ubuntu Mono'
+        style: normal
+        weight: normal
+    src: local('Ubuntu Mono'), url('fonts/UbuntuMono.woff') format('woff')
+    font:
+        family: 'Hammersmith One'
+        style: normal
+        weight: normal
+    src: local('Hammersmith One'), url('fonts/HammersmithOne.woff') format('woff')
+
+
+
+
+body
+    font-family: Helvetica, Verdana, 'LiHei Pro', '微軟正黑體', '新細明體', Arial, sans-serif
+    color: rgb(120, 120, 120)
+    
+#container
+    width: 1000px
+    margin: 40px auto
+    
+    
+.oscilloscope
+    width: 800px
+    height: 150px
+    margin: 20px 100px
+    border-radius: 10px
+    box-shadow: inset rgb(200, 200, 200) 0 0 10px
+    
+    .name
+        margin-top: -150px
+        padding: 10px 20px
+        font-size: 150%
+        color: rgb(120, 120, 120)
+    
