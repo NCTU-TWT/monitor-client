@@ -78,30 +78,14 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   src: local("Hammersmith One"), url("fonts/HammersmithOne.woff") format("woff");
 }
 
-/* line 23, ../../src/frontend/sass/style.sass */
+/* line 23, ../../src/sass/style.sass */
 body {
   font-family: Helvetica, Verdana, "LiHei Pro", "微軟正黑體", "新細明體", Arial, sans-serif;
   color: #787878;
 }
 
-/* line 27, ../../src/frontend/sass/style.sass */
+/* line 27, ../../src/sass/style.sass */
 #container {
   width: 1000px;
   margin: 40px auto;
-}
-
-/* line 32, ../../src/frontend/sass/style.sass */
-.oscilloscope {
-  width: 800px;
-  height: 150px;
-  margin: 20px 100px;
-  border-radius: 10px;
-  box-shadow: inset #c8c8c8 0 0 10px;
-}
-/* line 39, ../../src/frontend/sass/style.sass */
-.oscilloscope .name {
-  margin-top: -150px;
-  padding: 10px 20px;
-  font-size: 150%;
-  color: #787878;
 }
