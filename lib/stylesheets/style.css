@@ -87,5 +87,52 @@ body {
 /* line 27, ../../src/sass/style.sass */
 #container {
   width: 1000px;
-  margin: 40px auto;
+  margin: 0 auto;
 }
+<<<<<<< HEAD
+=======
+/* line 32, ../../src/sass/style.sass */
+#container > article {
+  width: 800px;
+}
+
+/* line 35, ../../src/sass/style.sass */
+#sessions {
+  width: 200px;
+  min-height: 500px;
+}
+/* line 39, ../../src/sass/style.sass */
+#sessions li {
+  height: 20px;
+  margin: 10px;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  line-height: 20px;
+}
+/* line 47, ../../src/sass/style.sass */
+#sessions li:hover {
+  background: #648cb4;
+  color: white;
+}
+/* line 51, ../../src/sass/style.sass */
+#sessions li span {
+  display: inline-block;
+  float: right;
+  width: 16px;
+  height: 16px;
+  margin: 2px;
+  margin-right: -10px;
+  border-radius: 8px;
+  line-height: 16px;
+  font-size: 75%;
+  color: white;
+  text-align: center;
+}
+/* line 64, ../../src/sass/style.sass */
+#sessions li span:hover {
+  background: white;
+  color: #787878;
+  cursor: pointer;
+}
+>>>>>>> dev

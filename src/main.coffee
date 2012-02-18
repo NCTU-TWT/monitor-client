@@ -9,9 +9,56 @@ require.config
         
 require ['jquery','io', 'raphael', 'underscore', 'backbone', 'hogan'], ($, io, Raphael, _, Backbone, hogan) ->
 
-    socket = io.connect()
+
+    class Chart extends Backbone.Model
+        initialize: (data) ->
+            #console.log 'chart'
+            #console.log data
+
+    class Charts extends Backbone.Collection
+        
+        model: Chart
+        
+
+
+    class Session extends Backbone.Model
     
-    socket.on 'chart', (data) ->
-        console.log data
-    socket.on 'stream', (data) ->
-        console.log data
+        initialize: (data) ->
+            @collection = new Charts data
+            console.log data
+            
+            # sessionID as ID
+            @id = data[0].session
+        
+    
+    class Sessions extends Backbone.Collection
+        
+        url: '/sessions'
+        
+        parse: (reply) ->
+            for session in reply
+                @add new Session session
+    
+    
+    
+    class Sidebar extends Backbone.View
+        
+        el: $('#sessions')
+                
+        template: hogan.compile $('#session').text()
+        
+        initialize: ->
+            @model.on 'add', (model) =>
+                
+                $('ul', @el).append @template.render
+                    id: model.id
+    #
+    #   Initialize
+    #
+    
+    sessions = new Sessions
+    sidebar = new Sidebar
+        model: sessions
+    
+    $ ->
+        sessions.fetch()
