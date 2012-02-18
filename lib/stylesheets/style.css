@@ -78,30 +78,58 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   src: local("Hammersmith One"), url("fonts/HammersmithOne.woff") format("woff");
 }
 
-/* line 23, ../../src/frontend/sass/style.sass */
+/* line 23, ../../src/sass/style.sass */
 body {
   font-family: Helvetica, Verdana, "LiHei Pro", "微軟正黑體", "新細明體", Arial, sans-serif;
   color: #787878;
 }
 
-/* line 27, ../../src/frontend/sass/style.sass */
+/* line 27, ../../src/sass/style.sass */
 #container {
   width: 1000px;
-  margin: 40px auto;
+  margin: 0 auto;
+}
+/* line 32, ../../src/sass/style.sass */
+#container > article {
+  width: 800px;
 }
 
-/* line 32, ../../src/frontend/sass/style.sass */
-.oscilloscope {
-  width: 800px;
-  height: 150px;
-  margin: 20px 100px;
-  border-radius: 10px;
-  box-shadow: inset #c8c8c8 0 0 10px;
+/* line 35, ../../src/sass/style.sass */
+#sessions {
+  width: 200px;
+  min-height: 500px;
 }
-/* line 39, ../../src/frontend/sass/style.sass */
-.oscilloscope .name {
-  margin-top: -150px;
+/* line 39, ../../src/sass/style.sass */
+#sessions li {
+  height: 20px;
+  margin: 10px;
   padding: 10px 20px;
-  font-size: 150%;
+  border-radius: 6px;
+  font-weight: bold;
+  line-height: 20px;
+}
+/* line 47, ../../src/sass/style.sass */
+#sessions li:hover {
+  background: #648cb4;
+  color: white;
+}
+/* line 51, ../../src/sass/style.sass */
+#sessions li span {
+  display: inline-block;
+  float: right;
+  width: 16px;
+  height: 16px;
+  margin: 2px;
+  margin-right: -10px;
+  border-radius: 8px;
+  line-height: 16px;
+  font-size: 75%;
+  color: white;
+  text-align: center;
+}
+/* line 64, ../../src/sass/style.sass */
+#sessions li span:hover {
+  background: white;
   color: #787878;
+  cursor: pointer;
 }

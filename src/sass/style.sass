@@ -26,19 +26,45 @@ body
     
 #container
     width: 1000px
-    margin: 40px auto
+    margin: 0 auto
     
+        
+    > article
+        width: 800px
+        
+#sessions
+    width: 200px
+    min-height: 500px
     
-.oscilloscope
-    width: 800px
-    height: 150px
-    margin: 20px 100px
-    border-radius: 10px
-    box-shadow: inset rgb(200, 200, 200) 0 0 10px
-    
-    .name
-        margin-top: -150px
+    li
+        height: 20px
+        margin: 10px
         padding: 10px 20px
-        font-size: 150%
-        color: rgb(120, 120, 120)
-    
+        border-radius: 6px
+        font-weight: bold
+        line-height: 20px
+        &.selected
+        &:hover
+            background: rgb(100, 140, 180)
+            color: white
+            
+        span
+            display: inline-block
+            float: right
+            width: 16px
+            height: 16px
+            margin: 2px
+            margin-right: -10px
+            border-radius: 8px
+            line-height: 16px
+            font-size: 75%
+            color: white
+            text-align: center
+            
+            &:hover
+                background: white
+                color: rgb(120, 120, 120)
+                cursor: pointer
+                
+                
+            

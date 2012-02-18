@@ -6,17 +6,16 @@
                 <link href="stylesheets/style.css" media="screen, projection" rel="stylesheet" type="text/css">
                 <script data-main="scripts/main" src="scripts/lib/require.js"></script>
         </head>
-        <script type="text/mustache" id="oscilloscope">
-            <div id="{{name}}" class="oscilloscope">
-                <div class="name">{{name}}</div>
-            </div>
+        <script type="text/mustache" id="session">
+            <li>{{id}}<span>x</span></li>
         </script>
         <body>
             <div id="container">
-                <div id="meter-container">
-                </div>
-                <div id="oscilloscope-container">
-                </div>
+                <aside id="sessions">
+                    <ul>
+                    </ul>
+                </aside>
+                <article></article>
             </div>
         </body>
 </html>
