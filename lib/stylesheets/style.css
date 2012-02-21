@@ -82,54 +82,62 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 body {
   font-family: Helvetica, Verdana, "LiHei Pro", "微軟正黑體", "新細明體", Arial, sans-serif;
   color: #787878;
+  background: #f0f0f0;
 }
 
-/* line 27, ../../src/sass/style.sass */
+/* line 28, ../../src/sass/style.sass */
+li {
+  list-style: none;
+}
+
+/* line 31, ../../src/sass/style.sass */
 #container {
   width: 1000px;
   margin: 0 auto;
 }
-/* line 31, ../../src/sass/style.sass */
-#container > article {
-  width: 800px;
-}
 
-/* line 34, ../../src/sass/style.sass */
+/* line 35, ../../src/sass/style.sass */
 #sessions {
-  width: 200px;
+  width: 180px;
+  padding: 20px 10px;
   min-height: 500px;
+  float: left;
 }
-/* line 38, ../../src/sass/style.sass */
+/* line 41, ../../src/sass/style.sass */
 #sessions li {
   height: 20px;
   margin: 10px;
-  padding: 10px 20px;
-  border-radius: 6px;
+  padding: 10px 30px;
+  border-radius: 5px;
   font-weight: bold;
   line-height: 20px;
-}
-/* line 46, ../../src/sass/style.sass */
-#sessions li:hover {
-  background: #648cb4;
-  color: white;
-}
-/* line 50, ../../src/sass/style.sass */
-#sessions li span {
-  display: inline-block;
-  float: right;
-  width: 16px;
-  height: 16px;
-  margin: 2px;
-  margin-right: -10px;
-  border-radius: 8px;
-  line-height: 16px;
-  font-size: 75%;
-  color: white;
-  text-align: center;
-}
-/* line 63, ../../src/sass/style.sass */
-#sessions li span:hover {
-  background: white;
-  color: #787878;
   cursor: pointer;
+}
+/* line 53, ../../src/sass/style.sass */
+#sessions li:hover {
+  background: #e6e6e6;
+  color: #3c78b4;
+}
+/* line 57, ../../src/sass/style.sass */
+#sessions li.selected {
+  background: #3c78b4;
+  color: white;
+}
+
+/* line 62, ../../src/sass/style.sass */
+#charts {
+  width: 780px;
+  min-height: 500px;
+  padding: 20px 10px;
+  float: left;
+}
+
+/* line 68, ../../src/sass/style.sass */
+.chart {
+  height: 100px;
+  margin: 10px 0;
+  border-radius: 10px;
+  background: white;
+  color: #3c78b4;
+  font-weight: bold;
 }

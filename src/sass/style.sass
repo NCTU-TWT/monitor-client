@@ -23,46 +23,54 @@
 body
     font-family: Helvetica, Verdana, 'LiHei Pro', '微軟正黑體', '新細明體', Arial, sans-serif
     color: rgb(120, 120, 120)
+    background: rgb(240, 240, 240)
     
+li
+    list-style: none
+
 #container
     width: 1000px
     margin: 0 auto
     
-    > article
-        width: 800px
-        
 #sessions
-    width: 200px
+    width: 180px
+    padding: 20px 10px
     min-height: 500px
+    float: left
     
     li
         height: 20px
         margin: 10px
-        padding: 10px 20px
-        border-radius: 6px
+        padding: 10px 30px
+        
+        border-radius: 5px
+        
         font-weight: bold
         line-height: 20px
-        &.selected
+        
+        cursor: pointer
+        
         &:hover
-            background: rgb(100, 140, 180)
+            background: rgb(230, 230, 230)
+            color: rgb(60, 120, 180)
+            
+        &.selected
+            background: rgb(60, 120, 180)
             color: white
             
-        span
-            display: inline-block
-            float: right
-            width: 16px
-            height: 16px
-            margin: 2px
-            margin-right: -10px
-            border-radius: 8px
-            line-height: 16px
-            font-size: 75%
-            color: white
-            text-align: center
             
-            &:hover
-                background: white
-                color: rgb(120, 120, 120)
-                cursor: pointer
-                
-              
+#charts
+    width: 780px
+    min-height: 500px
+    padding: 20px 10px
+    float: left
+    
+.chart
+    height: 100px
+    margin: 10px 0
+    
+    //border: 4px solid rgb(230, 230, 230)
+    border-radius: 10px
+    background: white
+    color: rgb(60, 120, 180)
+    font-weight: bold

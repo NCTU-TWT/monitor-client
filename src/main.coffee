@@ -25,7 +25,6 @@ require ['jquery','io', 'raphael', 'underscore', 'backbone', 'hogan'], ($, io, R
     
         initialize: (data) ->
             @collection = new Charts data
-            console.log data
             
             # sessionID as ID
             @id = data[0].session
@@ -40,24 +39,75 @@ require ['jquery','io', 'raphael', 'underscore', 'backbone', 'hogan'], ($, io, R
                 @add new Session session
     
     
-    
-    class Sidebar extends Backbone.View
+    class ChartView extends Backbone.View
         
-        el: $('#sessions')
+        template: hogan.compile $('#chart-template').text()
+        
+        className: 'chart'
+        
+        render: ->
+        
+            console.log @model
+            @$el.html @template.render
+                name: @model.cid
+            return @
+    
+    class SessionView extends Backbone.View
+        
+        events: 
+            'click': 'select'
+                     
+        tagName: 'li'
+        
+        
+        template: hogan.compile $('#session-template').text()
+               
+                 
+        render: ->
+        
+            @$el.html @template.render
+                id: @model.id                
+                                    
+            return @
+            
+        select: ->
+        
+            # addClass
+            $('#sessions li').removeClass 'selected'
+            @$el.addClass 'selected'
+        
+            # remove the former content
+            $('#charts').empty()
+        
+        
+            for chart in @model.collection.models
+                chartView = new ChartView
+                    model: chart
+                $('#charts').append chartView.render().el
+            
+    class AppView extends Backbone.View
+        
+        el: $('body')
                 
         template: hogan.compile $('#session').text()
         
         initialize: ->
-            @model.on 'add', (model) =>
+            @model.on 'add', @addSession
+            
                 
-                $('ul', @el).append @template.render
-                    id: model.id
+        addSession: (model) =>
+        
+            sessionView = new SessionView
+                model: model                
+            $('#sessions ul').append sessionView.render().el
+            
+    
     #
     #   Initialize
     #
     
     sessions = new Sessions
-    sidebar = new Sidebar
+    app = new AppView
         model: sessions
     
     $ ->

@@ -6,8 +6,11 @@
                 <link href="stylesheets/style.css" media="screen, projection" rel="stylesheet" type="text/css">
                 <script data-main="scripts/main" src="scripts/lib/require.js"></script>
         </head>
-        <script type="text/mustache" id="session">
-            <li>{{id}}<span>x</span></li>
+        <script type="text/mustache" id="session-template">
+            {{id}}
+        </script>
+        <script type="text/mustache" id="chart-template">
+            {{name}}
         </script>
         <body>
             <div id="container">
@@ -15,7 +18,7 @@
                     <ul>
                     </ul>
                 </aside>
-                <article></article>
+                <article id="charts"></article>
             </div>
         </body>
 </html>
