@@ -78,64 +78,72 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   src: local("Hammersmith One"), url("fonts/HammersmithOne.woff") format("woff");
 }
 
-/* line 23, ../../src/sass/style.sass */
+/* line 24, ../../src/sass/style.sass */
 body {
   font-family: Helvetica, Verdana, "LiHei Pro", "微軟正黑體", "新細明體", Arial, sans-serif;
   color: #787878;
   background: #f0f0f0;
 }
 
-/* line 28, ../../src/sass/style.sass */
+/* line 29, ../../src/sass/style.sass */
 li {
   list-style: none;
 }
 
-/* line 31, ../../src/sass/style.sass */
+/* line 32, ../../src/sass/style.sass */
+h2 {
+  color: #3c78b4;
+  font-weight: bold;
+  font-size: 125%;
+}
+
+/* line 38, ../../src/sass/style.sass */
 #container {
   width: 1000px;
   margin: 0 auto;
 }
 
-/* line 35, ../../src/sass/style.sass */
-#sessions {
+/* line 42, ../../src/sass/style.sass */
+#sidebar {
   width: 180px;
   padding: 20px 10px;
   min-height: 500px;
   float: left;
 }
-/* line 41, ../../src/sass/style.sass */
-#sessions li {
+/* line 50, ../../src/sass/style.sass */
+#sidebar li {
   height: 20px;
-  margin: 10px;
+  margin: 20px 0;
   padding: 10px 30px;
   border-radius: 5px;
   font-weight: bold;
   line-height: 20px;
+  text-align: center;
   cursor: pointer;
 }
-/* line 53, ../../src/sass/style.sass */
-#sessions li:hover {
+/* line 63, ../../src/sass/style.sass */
+#sidebar li:hover {
   background: #e6e6e6;
   color: #3c78b4;
 }
-/* line 57, ../../src/sass/style.sass */
-#sessions li.selected {
+/* line 67, ../../src/sass/style.sass */
+#sidebar li.selected {
   background: #3c78b4;
   color: white;
 }
 
-/* line 62, ../../src/sass/style.sass */
-#charts {
+/* line 72, ../../src/sass/style.sass */
+#main {
   width: 780px;
   min-height: 500px;
   padding: 20px 10px;
   float: left;
 }
 
-/* line 68, ../../src/sass/style.sass */
+/* line 78, ../../src/sass/style.sass */
 .chart {
   height: 100px;
-  margin: 10px 0;
+  margin: 20px 0;
   border-radius: 10px;
   background: white;
   color: #3c78b4;

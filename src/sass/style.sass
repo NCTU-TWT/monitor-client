@@ -19,6 +19,7 @@
 
 
 
+$blau: rgb(60, 120, 180)
 
 body
     font-family: Helvetica, Verdana, 'LiHei Pro', '微軟正黑體', '新細明體', Arial, sans-serif
@@ -28,25 +29,34 @@ body
 li
     list-style: none
 
+h2
+    color: $blau
+    font-weight: bold
+    font-size: 125%
+    
+    
 #container
     width: 1000px
     margin: 0 auto
     
-#sessions
+#sidebar
     width: 180px
     padding: 20px 10px
     min-height: 500px
     float: left
     
+        
+    
     li
         height: 20px
-        margin: 10px
+        margin: 20px 0
         padding: 10px 30px
         
         border-radius: 5px
         
         font-weight: bold
         line-height: 20px
+        text-align: center        
         
         cursor: pointer
         
@@ -55,11 +65,11 @@ li
             color: rgb(60, 120, 180)
             
         &.selected
-            background: rgb(60, 120, 180)
+            background: $blau
             color: white
             
             
-#charts
+#main
     width: 780px
     min-height: 500px
     padding: 20px 10px
@@ -67,10 +77,10 @@ li
     
 .chart
     height: 100px
-    margin: 10px 0
+    margin: 20px 0
     
     //border: 4px solid rgb(230, 230, 230)
     border-radius: 10px
     background: white
-    color: rgb(60, 120, 180)
+    color: $blau
     font-weight: bold

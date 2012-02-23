@@ -11,12 +11,16 @@ require ['jquery','io', 'raphael', 'underscore', 'backbone', 'hogan'], ($, io, R
 
 
     class Chart extends Backbone.Model
+    class Charts extends Backbone.Collection 
+    
+
+    class Chart extends Backbone.Model
+    
+    
         initialize: (data) ->
             #console.log 'chart'
-            #console.log data
-
-    class Charts extends Backbone.Collection
-        
+            
+    class Charts extends Backbone.Collection        
         model: Chart
         
 
@@ -24,10 +28,17 @@ require ['jquery','io', 'raphael', 'underscore', 'backbone', 'hogan'], ($, io, R
     class Session extends Backbone.Model
     
         initialize: (data) ->
+               
             @collection = new Charts data
             
             # sessionID as ID
             @id = data[0].session
+        
+        
+        
+        
+        
+        
         
     
     class Sessions extends Backbone.Collection
@@ -49,7 +60,7 @@ require ['jquery','io', 'raphael', 'underscore', 'backbone', 'hogan'], ($, io, R
         
             console.log @model
             @$el.html @template.render
-                name: @model.cid
+                name: @model.get 'name'
             return @
     
     class SessionView extends Backbone.View
@@ -73,7 +84,7 @@ require ['jquery','io', 'raphael', 'underscore', 'backbone', 'hogan'], ($, io, R
         select: ->
         
             # addClass
-            $('#sessions li').removeClass 'selected'
+            $('#sidebar li').removeClass 'selected'
             @$el.addClass 'selected'
         
             # remove the former content
@@ -84,6 +95,8 @@ require ['jquery','io', 'raphael', 'underscore', 'backbone', 'hogan'], ($, io, R
                 chartView = new ChartView
                     model: chart
                 $('#charts').append chartView.render().el
+                
+                console.log chart
             
     class AppView extends Backbone.View
         
@@ -99,7 +112,7 @@ require ['jquery','io', 'raphael', 'underscore', 'backbone', 'hogan'], ($, io, R
         
             sessionView = new SessionView
                 model: model                
-            $('#sessions ul').append sessionView.render().el
+            $('#sidebar ul').append sessionView.render().el
             
     
     #
@@ -109,6 +122,10 @@ require ['jquery','io', 'raphael', 'underscore', 'backbone', 'hogan'], ($, io, R
     sessions = new Sessions
     app = new AppView
         model: sessions
+    
+    socket = io.connect()
+    socket.on 'header', (data) ->
+        console.log data
     
     $ ->
         sessions.fetch()
