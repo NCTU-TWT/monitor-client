@@ -126,6 +126,8 @@ require ['jquery','io', 'raphael', 'underscore', 'backbone', 'hogan'], ($, io, R
     socket = io.connect()
     socket.on 'header', (data) ->
         console.log data
+    socket.on 'data', (data) ->
+        console.log data
     
     $ ->
         sessions.fetch()
