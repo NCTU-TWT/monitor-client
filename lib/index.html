@@ -7,21 +7,24 @@
                 <link href="stylesheets/style.css" rel="stylesheet" type="text/css">
                 <script data-main="scripts/main" src="scripts/lib/require.js"></script>
         </head>
-        <script type="text/mustache" id="session-template">
-            {{id}}
+        <script type="text/mustache" id="record-template">
+            <div class="record-name">{{id}}</div>
+            <div class="record-icon">
+                <i class="icon-trash"></i>
+            </div>
         </script>
         <script type="text/mustache" id="chart-template">
             {{name}}
         </script>
         <body>
             <div id="container">
-                <aside id="sidebar">
-                    <h2>Sessions</h2>
+                <aside id="record">
+                    <h2><i class="icon-list"></i> Records</h2>
                     <ul>
                     </ul>
                 </aside>
                 <article id="main">                    
-                    <h2>Data & Charts</h2>
+                    <h2><i class="icon-bar-chart"></i> Data & Charts</h2>
                     <section id="charts">
                     </section>
                 </article>

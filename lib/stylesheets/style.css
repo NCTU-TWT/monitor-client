@@ -1,8 +1,4 @@
-/* Welcome to Compass.
- * In this file you should write your main styles. (or centralize your imports)
- * Import this file using the following HTML or equivalent:
- * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
-/* line 17, ../../../../../../var/lib/gems/1.8/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 17, ../../../../../../var/lib/gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -24,45 +20,45 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 20, ../../../../../../var/lib/gems/1.8/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 20, ../../../../../../var/lib/gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 body {
   line-height: 1;
 }
 
-/* line 22, ../../../../../../var/lib/gems/1.8/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../../../../../var/lib/gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 24, ../../../../../../var/lib/gems/1.8/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../../../var/lib/gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 26, ../../../../../../var/lib/gems/1.8/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../../../var/lib/gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 28, ../../../../../../var/lib/gems/1.8/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../../../var/lib/gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 101, ../../../../../../var/lib/gems/1.8/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 101, ../../../../../../var/lib/gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 30, ../../../../../../var/lib/gems/1.8/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../../../var/lib/gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 114, ../../../../../../var/lib/gems/1.8/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 114, ../../../../../../var/lib/gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block;
 }
@@ -78,74 +74,87 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   src: local("Hammersmith One"), url("fonts/HammersmithOne.woff") format("woff");
 }
 
-/* line 24, ../../src/sass/style.sass */
+/* line 28, ../../src/sass/style.sass */
 body {
   font-family: Helvetica, Verdana, "LiHei Pro", "微軟正黑體", "新細明體", Arial, sans-serif;
   color: #787878;
   background: #f0f0f0;
 }
 
-/* line 29, ../../src/sass/style.sass */
-li {
-  list-style: none;
-}
-
-/* line 32, ../../src/sass/style.sass */
+/* line 33, ../../src/sass/style.sass */
 h2 {
+  height: 40px;
+  line-height: 40px;
   color: #3c78b4;
   font-weight: bold;
   font-size: 125%;
 }
 
-/* line 38, ../../src/sass/style.sass */
-#container {
-  width: 1000px;
-  margin: 0 auto;
-}
-
 /* line 42, ../../src/sass/style.sass */
-#sidebar {
-  width: 180px;
-  padding: 20px 10px;
-  min-height: 500px;
-  float: left;
+#container {
+  overflow: hidden;
+  *zoom: 1;
+  width: 1000px;
+  margin: 20px auto;
 }
-/* line 50, ../../src/sass/style.sass */
-#sidebar li {
-  height: 20px;
-  margin: 20px 0;
-  padding: 10px 30px;
-  border-radius: 5px;
+
+/* line 48, ../../src/sass/style.sass */
+#record {
+  float: left;
+  width: 160px;
+  margin: 0 20px;
+}
+/* line 53, ../../src/sass/style.sass */
+#record li {
+  width: 140px;
+  overflow: hidden;
+  *zoom: 1;
+  height: 40px;
+  padding-left: 20px;
+  line-height: 40px;
+}
+/* line 61, ../../src/sass/style.sass */
+#record li .record-name {
+  float: left;
+  width: 100px;
   font-weight: bold;
-  line-height: 20px;
+}
+/* line 66, ../../src/sass/style.sass */
+#record li .record-icon {
+  float: left;
+  width: 40px;
+  height: 40px;
   text-align: center;
-  cursor: pointer;
 }
-/* line 63, ../../src/sass/style.sass */
-#sidebar li:hover {
-  background: #e6e6e6;
-  color: #3c78b4;
-}
-/* line 67, ../../src/sass/style.sass */
-#sidebar li.selected {
-  background: #3c78b4;
-  color: white;
-}
-
 /* line 72, ../../src/sass/style.sass */
-#main {
-  width: 780px;
-  min-height: 500px;
-  padding: 20px 10px;
-  float: left;
+#record li .record-icon:hover {
+  color: #b43c00;
+}
+/* line 74, ../../src/sass/style.sass */
+#record li i {
+  display: none;
+}
+/* line 78, ../../src/sass/style.sass */
+#record li.active {
+  -webkit-box-shadow: white 0 1px 0, rgba(0, 0, 0, 0.5) 0 1px 3px 0 inset;
+  -moz-box-shadow: white 0 1px 0, rgba(0, 0, 0, 0.5) 0 1px 3px 0 inset;
+  box-shadow: white 0 1px 0, rgba(0, 0, 0, 0.5) 0 1px 3px 0 inset;
+  text-shadow: 0 1px 1px white;
+  border-radius: 4px;
+  background: #ebebeb;
+}
+/* line 83, ../../src/sass/style.sass */
+#record li:hover {
+  background: #ebebeb;
+}
+/* line 86, ../../src/sass/style.sass */
+#record li:hover i {
+  display: inline;
 }
 
-/* line 78, ../../src/sass/style.sass */
-.chart {
-  height: 100px;
-  margin: 20px 0;
-  border-radius: 10px;
-  background: white;
-  color: #3c78b4;
-  font-weight: bold;
+/* line 88, ../../src/sass/style.sass */
+#main {
+  float: left;
+  width: 760px;
+  margin: 0 20px;
 }

@@ -10,124 +10,89 @@ require.config
 require ['jquery','io', 'raphael', 'underscore', 'backbone', 'hogan'], ($, io, Raphael, _, Backbone, hogan) ->
 
 
-    class Chart extends Backbone.Model
-    class Charts extends Backbone.Collection 
-    
 
-    class Chart extends Backbone.Model
-    
-    
-        initialize: (data) ->
-            #console.log 'chart'
+
+    class Record extends Backbone.Model
+        defaults:
+            name: 'Unknown Sensor'
+            stream: {}
+            session: null
+            lowerBound: -1
+            upperBound: 1
+            reference: 0
+        urlRoot: '/sessions'
             
-    class Charts extends Backbone.Collection        
-        model: Chart
-        
-
-
-    class Session extends Backbone.Model
-    
-        initialize: (data) ->
-               
-            @collection = new Charts data
-            
-            # sessionID as ID
-            @id = data[0].session
-        
-        
-        
-        
-        
-        
-        
-    
-    class Sessions extends Backbone.Collection
-        
+    class Records extends Backbone.Collection
+        model: Record
         url: '/sessions'
+        parse: (reply) =>
         
-        parse: (reply) ->
             for session in reply
-                @add new Session session
+                for header in session
+                    header.id = header.session
+                    @add header
     
+
+    class RecordView extends Backbone.View
     
-    class ChartView extends Backbone.View
-        
-        template: hogan.compile $('#chart-template').text()
-        
-        className: 'chart'
-        
-        render: ->
-        
-            console.log @model
-            @$el.html @template.render
-                name: @model.get 'name'
-            return @
-    
-    class SessionView extends Backbone.View
-        
-        events: 
+        events:
             'click': 'select'
-                     
+            'click .record-icon': 'remove'
+    
+        template: hogan.compile $('#record-template').text()
+        
         tagName: 'li'
         
-        
-        template: hogan.compile $('#session-template').text()
-               
-                 
-        render: ->
-        
+        initialize: ->
+            console.log 'new view'
+            console.log @model
+            
             @$el.html @template.render
-                id: @model.id                
-                                    
-            return @
+                id: @model.get 'session'
             
         select: ->
-        
-            # addClass
-            $('#sidebar li').removeClass 'selected'
-            @$el.addClass 'selected'
-        
-            # remove the former content
-            $('#charts').empty()
-        
-        
-            for chart in @model.collection.models
-                chartView = new ChartView
-                    model: chart
-                $('#charts').append chartView.render().el
-                
-                console.log chart
+            $('#record li').removeClass 'active'
+            @$el.addClass 'active'
             
-    class AppView extends Backbone.View
+        remove: ->
+            
+            @model.destroy()
+            @$el.remove()
+                           
+            return false
+            
+            
+    class App extends Backbone.View
         
         el: $('body')
                 
-        template: hogan.compile $('#session').text()
-        
-        initialize: ->
-            @model.on 'add', @addSession
+        initialize: (param) ->
+            @records = param.records            
+            @records.on 'add', @addRecord
             
                 
-        addSession: (model) =>
+        addRecord: (model) =>
         
-            sessionView = new SessionView
-                model: model                
-            $('#sidebar ul').append sessionView.render().el
+            recordView = new RecordView
+                model: model
+              
+            $('#record ul').append recordView.render().el
             
     
     #
     #   Initialize
     #
     
-    sessions = new Sessions
-    app = new AppView
-        model: sessions
+    records = new Records
+    
+    app = new App
+        records: records
     
     socket = io.connect()
     socket.on 'header', (data) ->
-        console.log data
+        #console.log data
     socket.on 'data', (data) ->
-        console.log data
+        #console.log data
     
     $ ->
-        sessions.fetch()
+        records.fetch()
